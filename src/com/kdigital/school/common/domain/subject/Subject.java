@@ -4,6 +4,8 @@ import com.kdigital.school.common.domain.BaseEntity;
 import com.kdigital.school.core.error.Preconditions;
 import com.kdigital.school.core.error.subject.SubjectErrorCode;
 
+import java.text.MessageFormat;
+
 public class Subject extends BaseEntity {
     private Integer code;
     private String name;
@@ -94,5 +96,10 @@ public class Subject extends BaseEntity {
                 SubjectErrorCode.SCORE_TYPE_IS_NULL);
 
         this.scoreType = scoreType;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("Subject{code={0}, name='{1}', scoreType={2}}", code, name, scoreType);
     }
 }
