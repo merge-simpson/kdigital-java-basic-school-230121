@@ -4,6 +4,8 @@ import com.kdigital.school.common.domain.BaseEntity;
 import com.kdigital.school.core.error.Preconditions;
 import com.kdigital.school.core.error.member.MemberErrorCode;
 
+import java.text.MessageFormat;
+
 public class Student extends BaseEntity {
     private Integer studentId;
     private String fullName;
@@ -73,5 +75,10 @@ public class Student extends BaseEntity {
                 MemberErrorCode.STUDENT_FULLNAME_IS_BLANK);
 
         this.fullName = fullName;
+    }
+
+    @Override
+    public String toString() {
+        return MessageFormat.format("Student{studentId={0}, fullName='{1}'}", studentId, fullName);
     }
 }
